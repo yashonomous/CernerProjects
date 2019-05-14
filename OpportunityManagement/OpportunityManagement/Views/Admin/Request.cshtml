@@ -1,0 +1,247 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Request</title>
+    <!--
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+        -->
+
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/DGmain.css" rel="stylesheet" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css" media="screen,projection" />
+    
+
+
+</head>
+
+<body style="margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;">
+    <br />
+    <img src="https://www.cerner.com/-/media/cerner-media-united-states/home-page/cerner_rgb_standard_-horizontal.png"
+         style=" border-radius: 8px;display: block;
+                margin-left: 225px;
+                margin-right: auto;
+                width: 20%;" />
+    <br />
+    <div class="container">
+        <nav>
+            <div class="nav-wrapper green">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li class="active"><a asp-controller="Admin" asp-action="Admin">Create Opportunity</a></li>
+                    <li class="active"><a asp-controller="Admin" asp-action="Requests">View Opportunity</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="calendar" style="max-width: 900px; margin: 40px auto;">
+    </div>
+
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h5>Opportunity Requests</h5>
+            <div class="section">
+                <div class="container">
+                    <table class="striped" id="tbDetails">
+                        <thead>
+                            <tr>
+                                <td><b>User Name</b></td>
+                                <td><b>Opportunity Description</b></td>
+                                <td><b>Start Date</b></td>
+                                <td><b>Approve</b></td>
+                                <td><b>Deny</b></td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close btn orange">Close</a>
+        </div>
+    </div>
+
+
+    <script src="~/js/main.js"></script>
+    <script src="~/js/DGmain.js"></script>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="~/js/materialize.min.js"></script>
+    <script src="https://www.datejs.com/build/date.js" type="text/javascript"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var events = [];
+            $.ajax({
+                type: "GET",
+                contentType: "application/json",
+                url: "/admin/GetEvents",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        events.push({
+                            id: v.user_opportunity_id,
+                            title: v.user_Name,
+                            description: v.opportunity_Description,
+                            start: v.start_Date,
+                            //end: v.endTime,
+                            color: v.color
+                        });
+                    })
+                    console.log(events);
+                    GenerateCalender(events);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert('failed');
+                }
+            })
+
+
+
+            function Accepts() {
+
+                //var id = $('Accept').val();
+                return alert("hello");
+                //console.log("id is: " + id);
+
+            }
+            function Deny() {
+
+                // var id = $('Deny').val();
+                return alert("hello");
+                //console.log("id is: " + id);
+
+            }
+
+            function GenerateCalender(events) {
+                var calendarEl = document.getElementById('calendar');
+
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    plugins: ['dayGrid'],
+                    header: {
+                        left: 'prev, next, today',
+                        center: 'title',
+                        right: 'dayGridMonth,dayGridWeek'
+                    },
+                    defaultDate: new Date(),
+                    eventLimit: true,
+                    eventLimit: 3,
+                    eventColor: '#378006',
+                    events: events, // an option!
+                    businessHours: true, // display business hours
+                    editable: true,
+                    weekNumbers: true,
+                    height: 600,
+                    allDayText: 'Events',
+                    selectable: true,
+                    overflow: 'auto',
+                    firstDay: 1,
+                    eventClick: function (info) {
+
+                        var startDate = info.event.start.toString().substring(0, 10);
+                        var startDateOrg = new Date();
+                        // startDateOrg.setDate(startDate.getDate() + 1);
+                        //tomorrow.setDate(today.getDate() + 1);
+                        console.log(startDate);
+                        console.log(startDateOrg);
+
+                        jQuery.ajax({
+                            type: "GET",
+                            url: "/admin/CreateDate/" + startDate,
+                            contentType: "application/json",
+                            dataType: "json",
+                            //data: startDate,
+                            success: function (result) {
+
+                                console.log(result);
+                                $("#tbDetails").find("tbody tr").remove();
+                                $.each(result, function (index, obj) {
+                                    var row = '<tr><td><a class="tooltipped" data-position="left" id="tooltip">' + obj.user_Name + ' </a></td> <td> ' + obj.opportunity_Description + ' </td> <td>' + obj.start_Date.toString().substring(0, 10);
+                                    row += '</td> <td><a class="waves-effect waves-light btn green" name="Accept" id=' + obj.user_opportunity_id + '>Accept</a></td>';
+                                    row += '<td><a class="waves-effect waves-light btn red" name="Deny">Deny</a></td> </tr>';
+                                    $("#tbDetails").find('tbody').append(row);
+                                    //console.log(row);
+                                    
+                                    //console.log(userObj);
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "/user/GetUser/" + obj.user_Name, //the name and location of your php file
+                                        contentType: "application/json",
+                                        dataType: "json",
+                                        success: function (result) {
+                                            var userObj = { Experience: result.experience, Qualification: result.qualification, Skills: result.skills };
+                                            var anchorElement = $('.tooltipped');
+                                            anchorElement.attr('data-tooltip', JSON.stringify(userObj));
+                                            anchorElement.tooltip();
+                                        } //just to make sure it got to this point.
+                                    });
+                                    
+
+                                });
+                                var links = document.getElementsByName("Accept");
+                                for (var i = 0, il = links.length; i < il; i++) {
+                                    links[i].addEventListener("click", function (event) {
+                                        var id = event.target.id;
+                                        var success = "";
+                                        jQuery.ajax({
+                                            type: "GET",
+                                            url: "/admin/updateRequest/" + id,
+                                            contentType: "application/json",
+                                            dataType: "json",
+                                            //data: startDate,
+                                            success: function (result) {0
+                                                success += "Accepted";
+                                            }
+                                        });
+                                        M.toast({
+                                            html: 'Accepted',
+                                            classes: 'rounded blue',
+                                            "preventDuplicates": true,
+                                        })
+                                    });
+                                }
+                                var links1 = document.getElementsByName("Deny");
+                                for (var i = 0, il = links.length; i < il; i++) {
+                                    links1[i].addEventListener("click", function () {
+                                        return alert("Deny");
+                                    });
+                                }
+                                const elem = document.getElementById('modal1');
+                                const instance = M.Modal.init(elem, { dismissible: false });
+                                instance.open();
+
+                                // change the border color just for fun
+                                info.el.style.borderColor = 'red';
+                            },
+                            failure: function (errMsg) {
+                                alert(errMsg);
+                            }
+                        });
+
+                    }
+                });
+                calendar.render();
+            }
+        });
+    </script>
+
+
+</body>
+</html>

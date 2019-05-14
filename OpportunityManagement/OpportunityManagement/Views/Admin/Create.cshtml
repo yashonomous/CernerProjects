@@ -1,0 +1,192 @@
+﻿@model Entities.Models.Opportunity
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- this is my CSS via cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+</head>
+<body>
+    <br />
+    <img src="https://www.cerner.com/-/media/cerner-media-united-states/home-page/cerner_rgb_standard_-horizontal.png"
+         style=" border-radius: 8px;display: block;
+                margin-left: 225px;
+                margin-right: auto;
+                width: 20%;" />
+    <br />
+    <div class="container">
+        <nav>
+            <div class="nav-wrapper green">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li class="active"><a asp-controller="Admin" asp-action="Admin">Opportunity</a></li>
+                    <li class="active"><a asp-controller="Admin" asp-action="Requests">Requests</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="calendar" style="max-width: 900px; margin: 40px auto;">
+    </div>
+    <br /> <br /> <br /> <br />
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <form class="col s12" method="post" asp-controller="admin" asp-action="Create">
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">description</i>
+                        <!--
+        <input placeholder="Opportunity" id="opp_desc" type="text" class="validate" asp-for="OpportunityDescription" required="required">
+                                -->
+                        <textarea id="textarea1" class="materialize-textarea" asp-for="OpportunityDescription" required="required"></textarea>
+                        <label for="textarea1">Opportunity Description</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input id="startTime" type="text" class="datepicker" asp-for="StartTime" required="required">
+                        <label for="startTime">Start Date</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input id="endTime" type="text" class="datepicker1" asp-for="EndTime" required="required">
+                        <label for="endTime">End Date</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="isVacant">
+                            <input type="checkbox"
+                                   checked="checked"
+                                   id="isVacant"
+                                   name="isVacant"
+                                   asp-for="IsVacant"
+                                   value="true" />
+                            <span>Is Vacant</span>
+                        </label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <select id="skill" name="skill" asp-for="Skill" required>
+                            <option selected disabled>Choose your option</option>
+                            <option value="Skill 1">Skill 1</option>
+                            <option value="Skill 2">Skill 2</option>
+                            <option value="Skill 3">Skill 3</option>
+                            <option value="Skill 4">Skill 4</option>
+                            <option value="Skill 5">Skill 5</option>
+                        </select>
+                        <label>Skill</label>
+                    </div>
+
+                    <div class="col s20 right">
+                        <div class="col-md-offset-5 col-md-1">
+                            <button type="submit" onclick="return validateData()" class="btn btn-info green">
+                                Create
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <script type="text/javascript" src="~/js/materialize.min.js"></script>
+    -->
+    <!-- this is my JS via cdn -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('.modal').modal();
+            //this are my init
+
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                minDate: new Date()
+            });
+
+            $('.datepicker1').datepicker({
+                format: 'yyyy-mm-dd',
+                minDate: new Date()
+            });
+
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
+
+           
+
+            $('#textarea1');
+            M.textareaAutoResize($('#textarea1'));
+        });
+    </script>
+
+    <script type="text/javascript">
+        function validateData() {
+            startDate = $("#startTime").val();
+            endDate = $("#endTime").val();
+            if ($("#textarea1").val() == "") {
+                M.toast({
+                    html: 'Please enter description.',
+                    classes: 'rounded blue'
+                })
+                //toastr.warning("Please enter description.");
+                return false;
+            }
+            else if ($("#startTime").val() == "") {
+                M.toast({
+                    html: 'Please enter start date.',
+                    classes: 'rounded blue',
+                    "preventDuplicates": true,
+                })
+                //toastr.warning("Please enter start date.");
+                return false;
+            }
+            else if ($("#endTime").val() == "") {
+                M.toast({
+                    html: 'Please enter end date.',
+                    classes: 'rounded blue'
+                })
+                //toastr.warning("Please enter end date.");
+                return false;
+            }
+            else if ($("#skill").val() == "") {
+                M.toast({
+                    html: 'Please select a Skill.',
+                    classes: 'rounded blue'
+                })
+                //toastr.warning("Please enter end date.");
+                return false;
+            }
+            else if (endDate < startDate) {
+                M.toast({
+                    html: 'End date should be greter than start date.',
+                    classes: 'rounded red'
+                })
+                return false;
+            }
+            else {
+                M.toast({
+                    html: 'Created!',
+                    classes: 'rounded green',
+                    completeCallback: function () { alert('Successfully Created') }
+                })
+                //toastr.success("Created!");
+                return true;
+            }
+        }
+    </script>
+
+    
+
+</body>
+</html>

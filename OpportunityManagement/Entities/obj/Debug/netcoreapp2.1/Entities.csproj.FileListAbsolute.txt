@@ -1,0 +1,17 @@
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\bin\Debug\netcoreapp2.1\Entities.deps.json
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\bin\Debug\netcoreapp2.1\Entities.dll
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.AssemblyInfoInputs.cache
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.AssemblyInfo.cs
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.dll
+C:\Users\ys067342\source\repos\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\bin\Debug\netcoreapp2.1\Entities.deps.json
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\bin\Debug\netcoreapp2.1\Entities.dll
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.AssemblyInfoInputs.cache
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.AssemblyInfo.cs
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.dll
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\ys067342\Desktop\OpportunityManagement\Entities\obj\Debug\netcoreapp2.1\Entities.csprojAssemblyReference.cache

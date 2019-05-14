@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NavBar</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css" media="screen,projection" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+            margin-left: 350px;
+            max-width: 300px;
+        }
+
+        .image {
+            display: block;
+            width: 800px;
+            height: auto;
+        }
+
+        nav {
+            height: 60px;
+            line-height: 30px;
+            width: 1100px;
+            margin-left: 200px;
+            top: 150px;
+        }
+
+        a{
+            height: 45px;
+            margin-top: 14px;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5); /* Black see-through */
+            color: #f1f1f1;
+            width: 266%;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+    <br />
+    <img src="https://www.cerner.com/-/media/cerner-media-united-states/home-page/cerner_rgb_standard_-horizontal.png"
+         style=" border-radius: 8px;display: block;
+                margin-left: 225px;
+                margin-right: auto;
+                width: 20%;" />
+    <br />
+
+    <nav>
+        <div class="nav-wrapper green">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li class="active"><a asp-controller="Admin" asp-action="Admin">Create Opportunity</a></li>
+                <li class="active"><a asp-controller="Admin" asp-action="Requests">View Opportunity</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h4 style="margin-left: 410px;">Welcome to Opportunity Management App</h4>
+
+    <div class="container">
+        <img src="https://media.bizj.us/view/img/10371602/img0101*1200xx3932-2212-0-205.jpg" alt="Avatar" class="image">
+        <div class="overlay">Cerner Opportunity Management</div>
+    </div>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="~/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.toast({
+                html: 'Logged in.',
+                classes: 'rounded blue',
+                "preventDuplicates": true,
+            });
+        })
+    </script>
+</body>
+</html>
