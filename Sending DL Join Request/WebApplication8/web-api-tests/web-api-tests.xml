@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>web-api-tests</name>
+    </assembly>
+    <members>
+        <member name="T:web_api_tests.GroupControllerTests">
+            <summary>Class containing all the test cases for Group controller.</summary>
+        </member>
+        <member name="M:web_api_tests.GroupControllerTests.GetGroups_ReturnsCorrectResponse">
+            <summary>Gets the groups returns correct response.</summary>
+            <returns>Generic task</returns>
+        </member>
+        <member name="M:web_api_tests.GroupControllerTests.GetGroupsById_ReturnsCorrectResponse">
+            <summary>Gets the groups by identifier returns correct response.</summary>
+            <returns>Generic task</returns>
+        </member>
+        <member name="T:web_api_tests.MailControllerTests">
+            <summary>Class containing all the test cases for Mail controller.</summary>
+        </member>
+        <member name="M:web_api_tests.MailControllerTests.SendMail_ReturnsCorrectResponse">
+            <summary>Sends the mail returns correct response.</summary>
+            <returns>Generic Task.</returns>
+        </member>
+        <member name="M:web_api_tests.MailControllerTests.SendMailException_ReturnsCorrectResponse">
+            <summary>Sends the mail exception returns correct response.</summary>
+            <returns>Generic Task.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,17 @@
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Contracts.dll
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Entities.dll
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Contracts.pdb
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Entities.pdb
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CopyComplete
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.dll
+C:\Users\ys067342\source\repos\WebApplication8\Repository\obj\Debug\netcoreapp2.1\Repository.pdb
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Repository.xml
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Contracts.xml
+C:\Users\ys067342\source\repos\WebApplication8\Repository\bin\Debug\netcoreapp2.1\Entities.xml

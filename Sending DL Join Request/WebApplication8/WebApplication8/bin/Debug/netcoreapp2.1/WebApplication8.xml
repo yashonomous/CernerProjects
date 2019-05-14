@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication8</name>
+    </assembly>
+    <members>
+        <member name="T:WebApplication8.Controllers.AssociateController">
+            <summary>Checks if the associate exists in db.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.AssociateController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.AssociateController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.AssociateController.GetAllAssociates">
+            <summary>Gets all groups.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.AssociateController.checkAssociateExists(Entities.Models.Associate)">
+            <summary>Gets all groups.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.GroupController">
+            <summary>All the HTTP response are returned in this controller class.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.GroupController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.GetAllGroups">
+            <summary>Gets all groups.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.GetGroupById(System.Int32)">
+            <summary>Gets the group by id.</summary>
+            <param name="gid">The id of the group to be searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.GetGroupByName(System.String)">
+            <summary>Gets the group by name.</summary>
+            <param name="gName">Name of the group to searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.GetAllAssocGroups(System.String)">
+            <summary>Gets all associate groups.</summary>
+            <param name="AssocID">The associate id.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.CreateGroup(Entities.Models.Group)">
+            <summary>Creates the group.</summary>
+            <param name="group">The group object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.UpdateGroup(System.Int32,Entities.Models.Group)">
+            <summary>Updates the group.</summary>
+            <param name="id">The id of the group to be updated.</param>
+            <param name="group">The group object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupController.DeleteGroup(System.Int32)">
+            <summary>Deletes the group.</summary>
+            <param name="id">The id of the group to be deleted.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.GroupSolutionController">
+            <summary>Get all groups and solutions.</summary>
+        </member>
+        <member name="F:WebApplication8.Controllers.GroupSolutionController._logger">
+            <summary>Linking solution to group.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupSolutionController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.AssociateController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupSolutionController.GetAllGroupSolutions">
+            <summary>Gets all groups and soltuions.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupSolutionController.GetAllSolutionsByGroupId(System.Int32)">
+            <summary>Gets the group by id.</summary>
+            <param name="gid">The id of the group to be searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupSolutionController.CreateGroupSolution(Entities.Models.GroupSolutionHelper)">
+            <summary>Creates the group.</summary>
+            <param name="groupSolutionHelper">The group object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.GroupTeamController">
+            <summary>Get all groups and Teams.</summary>
+        </member>
+        <member name="F:WebApplication8.Controllers.GroupTeamController._logger">
+            <summary>Linking Team to group.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupTeamController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.GroupTeamController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupTeamController.GetAllGroupTeams">
+            <summary>Gets all groups and soltuions.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupTeamController.GetAllTeamsByGroupId(System.Int32)">
+            <summary>Gets the group by id.</summary>
+            <param name="gid">The id of the group to be searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.GroupTeamController.CreateGroupTeam(Entities.Models.GroupTeamHelper)">
+            <summary>Creates the group.</summary>
+            <param name="groupTeamHelper">The group object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.MailController">
+            <summary>Controller class for sending mail to the admins using SMTP.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.MailController.#ctor(Contracts.ILoggerManager)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.MailController"/> class.</summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.MailController.SendMail(Entities.Models.Recepients)">
+            <summary>Sends the mail.</summary>
+            <param name="recipients">The recipients.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.ManagerController">
+            <summary>All the HTTP response are returned in this controller class.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.ManagerController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.GetAllManagers">
+            <summary>Gets all managers.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.GetManagerById(System.Int32)">
+            <summary>Gets the manager by id.</summary>
+            <param name="gid">The id of the manager to be searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.GetManagerByName(System.String)">
+            <summary>Gets the manager by name.</summary>
+            <param name="gName">Name of the manager to searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.GetAllAssocManagers(System.String)">
+            <summary>Gets all associate managers.</summary>
+            <param name="AssocID">The associate id.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.CreateManager(Entities.Models.Manager)">
+            <summary>Creates the manager.</summary>
+            <param name="manager">The manager object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.UpdateManager(System.Int32,Entities.Models.Manager)">
+            <summary>Updates the manager.</summary>
+            <param name="id">The id of the manager to be updated.</param>
+            <param name="manager">The manager object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.ManagerController.Deletemanager(System.Int32)">
+            <summary>Deletes the manager.</summary>
+            <param name="id">The id of the manager to be deleted.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.SolutionController">
+            <summary>All the HTTP response are returned in this controller class.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.SolutionController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.GetAllSolutions">
+            <summary>Gets all solutions.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.GetSolutionById(System.Int32)">
+            <summary>Gets the solution by id.</summary>
+            <param name="gid">The id of the solution to be searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.GetSolutionByName(System.String)">
+            <summary>Gets the solution by name.</summary>
+            <param name="gName">Name of the solution to searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.GetAllAssocSolutions(System.String)">
+            <summary>Gets all associate solutions.</summary>
+            <param name="AssocID">The associate id.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.Createsolution(Entities.Models.Solution)">
+            <summary>Creates the solution.</summary>
+            <param name="solution">The solution object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.Updatesolution(System.Int32,Entities.Models.Solution)">
+            <summary>Updates the solution.</summary>
+            <param name="id">The id of the solution to be updated.</param>
+            <param name="solution">The solution object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.SolutionController.Deletesolution(System.Int32)">
+            <summary>Deletes the solution.</summary>
+            <param name="id">The id of the solution to be deleted.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Controllers.TeamController">
+            <summary>All the HTTP response are returned in this controller class.</summary>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.#ctor(Contracts.ILoggerManager,Contracts.IRepositoryWrapper)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Controllers.TeamController"/> class.</summary>
+            <param name="logger">The logger.</param>
+            <param name="repository">The repository.</param>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.GetAllTeams">
+            <summary>Gets all teams.</summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.GetTeamById(System.Int32)">
+            <summary>Gets the team by id.</summary>
+            <param name="gid">The id of the team to be searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.GetTeamByName(System.String)">
+            <summary>Gets the team by name.</summary>
+            <param name="gName">Name of the team to searched.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.GetAllAssocTeams(System.String)">
+            <summary>Gets all associate teams.</summary>
+            <param name="AssocID">The associate id.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.CreateTeam(Entities.Models.Team)">
+            <summary>Creates the team.</summary>
+            <param name="team">The team object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.UpdateTeam(System.Int32,Entities.Models.Team)">
+            <summary>Updates the team.</summary>
+            <param name="id">The id of the team to be updated.</param>
+            <param name="team">The team object from the form.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:WebApplication8.Controllers.TeamController.DeleteTeam(System.Int32)">
+            <summary>Deletes the team.</summary>
+            <param name="id">The id of the team to be deleted.</param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:WebApplication8.Extensions.ServiceExtensions">
+            <summary>This class contains our service extension methods.</summary>
+        </member>
+        <member name="M:WebApplication8.Extensions.ServiceExtensions.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>Configures the cors policy.</summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:WebApplication8.Extensions.ServiceExtensions.ConfigureIISIntegration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>Configures the IIS integration which will help us with the IIS deployment</summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:WebApplication8.Extensions.ServiceExtensions.ConfigureLoggerService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>Configures the logger service.</summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:WebApplication8.Extensions.ServiceExtensions.ConfigureMySqlContext(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Configures MySQL context.</summary>
+            <param name="services">The services.</param>
+            <param name="config">The configuration.</param>
+        </member>
+        <member name="M:WebApplication8.Extensions.ServiceExtensions.ConfigureRepositoryWrapper(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>Configures the repository wrapper.</summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="T:WebApplication8.Program">
+            <summary>Entry point of our application.</summary>
+        </member>
+        <member name="M:WebApplication8.Program.Main(System.String[])">
+            <summary>Defines the entry point of the application.</summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:WebApplication8.Program.CreateWebHostBuilder(System.String[])">
+            <summary><para>Creates the web host builder.</para>
+            The Startup class is a mandatory for the .NET Core, in which we configure embedded or custom services that our application needs. 
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebApplication8.Startup">
+            <summary>Startup class for our project.</summary>
+        </member>
+        <member name="M:WebApplication8.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Initializes a new instance of the <see cref="T:WebApplication8.Startup"/> class.</summary>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="P:WebApplication8.Startup.Configuration">
+            <summary>Gets the configuration.</summary>
+            <value>The configuration of type IConfiguration .</value>
+        </member>
+        <member name="M:WebApplication8.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>Configures the services.</summary>
+            <param name="services">The services of type IServiceCollection.</param>
+        </member>
+        <member name="M:WebApplication8.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>Configures the specified application.</summary>
+            <param name="app">An IApplicationBuilder type variable.</param>
+            <param name="env">An IHostingEnvironment type variable.</param>
+        </member>
+    </members>
+</doc>

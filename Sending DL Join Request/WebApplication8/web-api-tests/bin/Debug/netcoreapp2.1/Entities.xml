@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Entities</name>
+    </assembly>
+    <members>
+        <member name="T:Entities.Extensions.GroupExtensions">
+            <summary>Class for mapping given group object to db group object.</summary>
+        </member>
+        <member name="M:Entities.Extensions.GroupExtensions.MapGroup(Entities.Models.Group,Entities.Models.Group)">
+            <summary>Maps the specified group.</summary>
+            <param name="dbGroup">The database group.</param>
+            <param name="group">The group.</param>
+        </member>
+        <member name="M:Entities.Extensions.GroupExtensions.MapSolution(Entities.Models.Solution,Entities.Models.Solution)">
+            <summary>Maps the specified solution.</summary>
+            <param name="dbSolution">The database solution.</param>
+            <param name="solution">The solution.</param>
+        </member>
+        <member name="M:Entities.Extensions.GroupExtensions.MapTeam(Entities.Models.Team,Entities.Models.Team)">
+            <summary>Maps the specified team.</summary>
+            <param name="dbTeam">The database team.</param>
+            <param name="team">The team.</param>
+        </member>
+        <member name="M:Entities.Extensions.GroupExtensions.MapManager(Entities.Models.Manager,Entities.Models.Manager)">
+            <summary>Maps the specified manager.</summary>
+            <param name="dbManager">The database manager.</param>
+            <param name="manager">The manager.</param>
+        </member>
+        <member name="T:Entities.Models.Associate">
+            <summary>Associate model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.Associate.assocId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the assoc entry.</value>
+        </member>
+        <member name="P:Entities.Models.Associate.AssociateId">
+            <summary>Gets or sets the associate ID(property name should be exactly same as the column name in db schema).</summary>
+            <value>The Associate ID.</value>
+        </member>
+        <member name="T:Entities.Models.Group">
+            <summary>Group model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.Group.id">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group.</value>
+        </member>
+        <member name="P:Entities.Models.Group.Name">
+            <summary>Gets or sets the name(property name should be exactly same as the column name in db schema).</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Entities.Models.Group.Description">
+            <summary>Gets or sets the description(property name should be exactly same as the column name in db schema).</summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Entities.Models.Group.Admin">
+            <summary>Gets or sets the admin(property name should be exactly same as the column name in db schema).</summary>
+            <value>The admin.</value>
+        </member>
+        <member name="P:Entities.Models.Group.deleted">
+            <summary>Gets or sets the deleted property(property name should be exactly same as the column name in db schema).</summary>
+            <value>The deleted sets to true or false.</value>
+        </member>
+        <member name="T:Entities.Models.GroupSolution">
+            <summary>Associate model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.GroupSolution.gs_id">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group.</value>
+        </member>
+        <member name="P:Entities.Models.GroupSolution.SolutionId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the solution.</value>
+        </member>
+        <member name="P:Entities.Models.GroupSolution.GroupId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group.</value>
+        </member>
+        <member name="T:Entities.Models.GroupSolutionHelper">
+            <summary>Class which has solution names string and group id.</summary>
+        </member>
+        <member name="P:Entities.Models.GroupSolutionHelper.solutionArray">
+            <summary>Gets or sets the recepient string.</summary>
+            <value>The recepient string.</value>
+        </member>
+        <member name="P:Entities.Models.GroupSolutionHelper.groupId">
+            <summary>Gets or sets the requested groups.</summary>
+            <value>The requested groups.</value>
+        </member>
+        <member name="T:Entities.Models.GroupTeam">
+            <summary>Group Team model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.GroupTeam.gt_id">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group team.</value>
+        </member>
+        <member name="P:Entities.Models.GroupTeam.TeamId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the team.</value>
+        </member>
+        <member name="P:Entities.Models.GroupTeam.GroupId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group.</value>
+        </member>
+        <member name="T:Entities.Models.GroupTeamHelper">
+            <summary>Class which has solution names string and group id.</summary>
+        </member>
+        <member name="P:Entities.Models.GroupTeamHelper.teamArray">
+            <summary>Gets or sets the recepient string.</summary>
+            <value>The recepient string.</value>
+        </member>
+        <member name="P:Entities.Models.GroupTeamHelper.groupId">
+            <summary>Gets or sets the requested groups.</summary>
+            <value>The requested groups.</value>
+        </member>
+        <member name="T:Entities.Models.Manager">
+            <summary>Manager model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.Manager.ManagerId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the manager.</value>
+        </member>
+        <member name="P:Entities.Models.Manager.TeamId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the team.</value>
+        </member>
+        <member name="P:Entities.Models.Manager.ManagerName">
+            <summary>Gets or sets the name(property name should be exactly same as the column name in db schema).</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Entities.Models.Manager.AssociateId">
+            <summary>Gets or sets the description(property name should be exactly same as the column name in db schema).</summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Entities.Models.Manager.EmailId">
+            <summary>Gets or sets the description(property name should be exactly same as the column name in db schema).</summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Entities.Models.Manager.deleted">
+            <summary>Gets or sets the deleted property(property name should be exactly same as the column name in db schema).</summary>
+            <value>The deleted sets to true or false.</value>
+        </member>
+        <member name="T:Entities.Models.Recepients">
+            <summary>Class which has recipients string and respective groups string.</summary>
+        </member>
+        <member name="P:Entities.Models.Recepients.recepientString">
+            <summary>Gets or sets the recepient string.</summary>
+            <value>The recepient string.</value>
+        </member>
+        <member name="P:Entities.Models.Recepients.requestedGroups">
+            <summary>Gets or sets the requested groups.</summary>
+            <value>The requested groups.</value>
+        </member>
+        <member name="T:Entities.Models.Solution">
+            <summary>Solution model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.Solution.SolutionId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group.</value>
+        </member>
+        <member name="P:Entities.Models.Solution.SolutionName">
+            <summary>Gets or sets the name(property name should be exactly same as the column name in db schema).</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Entities.Models.Solution.SolutionOwner">
+            <summary>Gets or sets the description(property name should be exactly same as the column name in db schema).</summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Entities.Models.Solution.deleted">
+            <summary>Gets or sets the deleted property(property name should be exactly same as the column name in db schema).</summary>
+            <value>The deleted sets to true or false.</value>
+        </member>
+        <member name="T:Entities.Models.Team">
+            <summary>Team model class with properties as specified in db.</summary>
+        </member>
+        <member name="P:Entities.Models.Team.TeamId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the group.</value>
+        </member>
+        <member name="P:Entities.Models.Team.SolutionId">
+            <summary>Gets or sets the id(property name should be exactly same as the column name in db schema).</summary>
+            <value>The id of the solution.</value>
+        </member>
+        <member name="P:Entities.Models.Team.TeamName">
+            <summary>Gets or sets the name(property name should be exactly same as the column name in db schema).</summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:Entities.Models.Team.TeamOwner">
+            <summary>Gets or sets the description(property name should be exactly same as the column name in db schema).</summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:Entities.Models.Team.deleted">
+            <summary>Gets or sets the deleted property(property name should be exactly same as the column name in db schema).</summary>
+            <value>The deleted sets to true or false.</value>
+        </member>
+        <member name="T:Entities.RepositoryContext">
+            <summary>
+            <para>Class acting as a middleware component for the communication with the database</para>
+            It has DbSet properties which contain the table data from the database.
+            </summary>
+        </member>
+        <member name="M:Entities.RepositoryContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>Initializes a new instance of the <see cref="T:Entities.RepositoryContext"/> class.</summary>
+            <param name="options">The options for this context.</param>
+        </member>
+        <member name="P:Entities.RepositoryContext.Groups">
+            <summary>Gets or sets the groups.</summary>
+            <value>The groups.</value>
+        </member>
+        <member name="P:Entities.RepositoryContext.Associate">
+            <summary>Gets or sets the associate.</summary>
+            <value>The associate.</value>
+        </member>
+        <member name="P:Entities.RepositoryContext.Solutions">
+            <summary>Gets or sets the solution.</summary>
+            <value>The solution.</value>
+        </member>
+        <member name="P:Entities.RepositoryContext.Teams">
+            <summary>Gets or sets the team.</summary>
+            <value>The team.</value>
+        </member>
+        <member name="P:Entities.RepositoryContext.Managers">
+            <summary>Gets or sets the manager.</summary>
+            <value>The manager.</value>
+        </member>
+        <member name="P:Entities.RepositoryContext.GroupSolution">
+            <summary>Gets or sets the manager.</summary>
+            <value>The manager.</value>
+        </member>
+        <member name="P:Entities.RepositoryContext.GroupTeam">
+            <summary>Gets or sets the manager.</summary>
+            <value>The manager.</value>
+        </member>
+    </members>
+</doc>

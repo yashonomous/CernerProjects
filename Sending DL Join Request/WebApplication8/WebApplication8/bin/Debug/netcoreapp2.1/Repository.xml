@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Repository</name>
+    </assembly>
+    <members>
+        <member name="T:Repository.AssociateRepository">
+            <summary>
+            <para>The main AssociateRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.AssociateRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.AssociateRepository.GetAllAssociates">
+            <summary>
+            This function returns all the associates in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of Associate Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.AssociateRepository.checkAssociateExists(System.String)">
+            <summary>Check if the associate exists.</summary>
+            <param name="assocId">Associate Id.</param>
+            <returns>boolean value</returns>
+        </member>
+        <member name="T:Repository.GroupRepository">
+            <summary>
+            <para>The main GroupRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.GroupRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.GroupRepository.GetAllGroups">
+            <summary>
+            This function returns all the groups in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of Group Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.GroupRepository.GetGroupById(System.Int32)">
+            <summary>
+            This function returns all the groups in DB.
+            </summary>
+            <returns>
+            <para>Group object with particular id.</para>
+            </returns>
+            <param name="groupId">An integer representing group ID.</param>
+        </member>
+        <member name="M:Repository.GroupRepository.GetGroupByName(System.String)">
+            <summary>
+            This function returns a particular group by name.
+            </summary>
+            <returns>
+            <para>Group object with particular name.</para>
+            </returns>
+            <param name="groupName">A string representing name of the group to be searched.</param>
+        </member>
+        <member name="M:Repository.GroupRepository.CreateGroup(Entities.Models.Group)">
+            <summary>
+            This function creates a group entry in DB.
+            </summary>
+            <remarks>
+            This creates and saves a new group entry in db.
+            </remarks>
+            <param name="group">An object of type Group</param>
+        </member>
+        <member name="M:Repository.GroupRepository.UpdateGroup(Entities.Models.Group,Entities.Models.Group)">
+            <summary>
+            This function updates a group entry in DB.
+            </summary>
+            <remarks>
+            This updates and saves a new group entry in db.
+            </remarks>
+            <param name="dbGroup">An group object of type Group</param>
+            <param name="group">An object of type Group to be mapped to db</param>
+        </member>
+        <member name="M:Repository.GroupRepository.DeleteGroup(Entities.Models.Group)">
+            <summary>
+            This function delete a group entry in DB.
+            </summary>
+            <remarks>
+            This delete and saves a new group entry in db.
+            </remarks>
+            <param name="group">An object of type Group</param>
+        </member>
+        <member name="T:Repository.GroupSolutionRepository">
+            <summary>
+            <para>The main AssociateRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.GroupSolutionRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupSolutionRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.GroupSolutionRepository.GetAllGroupSolutions">
+            <summary>
+            This function returns all the associates in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of Associate Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.GroupSolutionRepository.CreateGroupSolution(Entities.Models.GroupSolution)">
+            <summary>Creates the group and solution.</summary>
+            <param name="groupSolution">The groupSolution object.</param>
+        </member>
+        <member name="M:Repository.GroupSolutionRepository.GetAllSolutionsByGroupId(System.Int32)">
+            <summary>Gets all associates.</summary>
+            <param name="groupId">The groupSolution object.</param>
+            <returns>group solution object.</returns>
+        </member>
+        <member name="T:Repository.GroupTeamRepository">
+            <summary>
+            <para>The main AssociateRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.GroupTeamRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupTeamRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.GroupTeamRepository.GetAllGroupTeams">
+            <summary>
+            This function returns all the associates in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of Associate Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.GroupTeamRepository.CreateGroupTeam(Entities.Models.GroupTeam)">
+            <summary>Creates the group and Team.</summary>
+            <param name="groupTeam">The groupTeam object.</param>
+        </member>
+        <member name="M:Repository.GroupTeamRepository.GetAllTeamsByGroupId(System.Int32)">
+            <summary>Gets all associates.</summary>
+            <param name="groupId">The groupTeam object.</param>
+            <returns>group Team object.</returns>
+        </member>
+        <member name="T:Repository.ManagerRepository">
+            <summary>
+            <para>The main ManagerRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.ManagerRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.ManagerRepository.GetAllManagers">
+            <summary>
+            This function returns all the managers in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of manager Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.ManagerRepository.GetManagerById(System.Int32)">
+            <summary>C:\Users\ys067342\source\repos\WebApplication8\Entities\Models\GroupSolution.cs
+            This function returns all the managers in DB.
+            </summary>
+            <returns>
+            <para>manager object with particular id.</para>
+            </returns>
+            <param name="managerId">An integer representing manager ID.</param>
+        </member>
+        <member name="M:Repository.ManagerRepository.GetManagerByName(System.String)">
+            <summary>
+            This function returns a particular manager by name.
+            </summary>
+            <returns>
+            <para>manager object with particular name.</para>
+            </returns>
+            <param name="managerName">A string representing name of the manager to be searched.</param>
+        </member>
+        <member name="M:Repository.ManagerRepository.CreateManager(Entities.Models.Manager)">
+            <summary>
+            This function creates a manager entry in DB.
+            </summary>
+            <remarks>
+            This creates and saves a new manager entry in db.
+            </remarks>
+            <param name="manager">An object of type manager</param>
+        </member>
+        <member name="M:Repository.ManagerRepository.UpdateManager(Entities.Models.Manager,Entities.Models.Manager)">
+            <summary>
+            This function updates a manager entry in DB.
+            </summary>
+            <remarks>
+            This updates and saves a new manager entry in db.
+            </remarks>
+            <param name="dbManager">An manager object of type manager</param>
+            <param name="manager">An object of type manager to be mapped to db</param>
+        </member>
+        <member name="M:Repository.ManagerRepository.DeleteManager(Entities.Models.Manager)">
+            <summary>
+            This function delete a manager entry in DB.
+            </summary>
+            <remarks>
+            This delete and saves a new manager entry in db.
+            </remarks>
+            <param name="manager">An object of type manager</param>
+        </member>
+        <member name="T:Repository.RepositoryBase`1">
+            <summary>
+            <para>The RepositoryBase class implementing IRepositoryBase interface.</para>
+            Contains all repository methods of EntityFramework.
+            <remarks>
+            <para>This class performs various actions on db using EntityFramework.</para>
+            </remarks>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Repository.RepositoryBase`1.RepositoryContext">
+            <value>Gets the value of the context.</value>
+            <summary>
+            Gets the value of the context.
+            </summary>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.#ctor(Entities.RepositoryContext)">
+            <summary>
+            Constructor for RepositoryBase class.
+            </summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.FindAll">
+            <summary>This function returns DbSet from db using the context.</summary>
+            <returns>DbSet from db using the context.</returns>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.FindByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>This function returns a particular DbSet from DB.</summary>
+            <param name="expression">
+            A lambda expression defining the condition to search
+            </param>
+            <returns>Group object with particular id.</returns>
+            <example>(group => group.id.Equals(groupId))</example>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.Create(`0)">
+            <summary>This function adds a DbSet in the db.</summary>
+            <param name="entity">Class of type any.</param>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.Update(`0)">
+            <summary>This function updates a DbSet in the db.</summary>
+            <param name="entity">Class of type any.</param>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.Delete(`0)">
+            <summary>This function deletes a DbSet from the db.</summary>
+            <param name="entity">Class of type any.</param>
+        </member>
+        <member name="M:Repository.RepositoryBase`1.Save">
+            <summary>This function saves a DbSet in the db.</summary>
+        </member>
+        <member name="T:Repository.RepositoryWrapper">
+            <summary>
+            The RepositoryWrapper class around our GroupRepository.
+            Contains all repository methods of EntityFramework.
+            <remarks>
+            This class performs various actions on db using EntityFramework.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.Group">
+            <summary>Gets the group object.</summary>
+            <value>The GroupRepository object.</value>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.Associate">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.Solution">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.Team">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.Manager">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.GroupSolution">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="P:Repository.RepositoryWrapper.GroupTeam">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="M:Repository.RepositoryWrapper.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.RepositoryWrapper"/> class.</summary>
+            <param name="repositoryContext">The repository context.</param>
+        </member>
+        <member name="T:Repository.SolutionRepository">
+            <summary>
+            <para>The main SolutionRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.SolutionRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.SolutionRepository.GetAllSolutions">
+            <summary>
+            This function returns all the solutions in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of solution Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.SolutionRepository.GetSolutionById(System.Int32)">
+            <summary>
+            This function returns all the solutions in DB.
+            </summary>
+            <returns>
+            <para>solution object with particular id.</para>
+            </returns>
+            <param name="solutionId">An integer representing solution ID.</param>
+        </member>
+        <member name="M:Repository.SolutionRepository.GetSolutionByName(System.String)">
+            <summary>
+            This function returns a particular solution by name.
+            </summary>
+            <returns>
+            <para>solution object with particular name.</para>
+            </returns>
+            <param name="solutionName">A string representing name of the solution to be searched.</param>
+        </member>
+        <member name="M:Repository.SolutionRepository.CreateSolution(Entities.Models.Solution)">
+            <summary>
+            This function creates a solution entry in DB.
+            </summary>
+            <remarks>
+            This creates and saves a new solution entry in db.
+            </remarks>
+            <param name="solution">An object of type solution</param>
+        </member>
+        <member name="M:Repository.SolutionRepository.UpdateSolution(Entities.Models.Solution,Entities.Models.Solution)">
+            <summary>
+            This function updates a solution entry in DB.
+            </summary>
+            <remarks>
+            This updates and saves a new solution entry in db.
+            </remarks>
+            <param name="dbSolution">An solution object of type solution</param>
+            <param name="solution">An object of type solution to be mapped to db</param>
+        </member>
+        <member name="M:Repository.SolutionRepository.DeleteSolution(Entities.Models.Solution)">
+            <summary>
+            This function delete a solution entry in DB.
+            </summary>
+            <remarks>
+            This delete and saves a new solution entry in db.
+            </remarks>
+            <param name="solution">An object of type solution</param>
+        </member>
+        <member name="T:Repository.TeamRepository">
+            <summary>
+            <para>The main SolutionRepository class.</para>
+            Contains all methods for performing operations on DB.
+            <remarks>
+            This class performs various actions on db.
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:Repository.TeamRepository.#ctor(Entities.RepositoryContext)">
+            <summary>Initializes a new instance of the <see cref="T:Repository.GroupRepository"/> class.</summary>
+            <param name="repositoryContext">A RepositoryContext class object</param>
+        </member>
+        <member name="M:Repository.TeamRepository.GetAllTeams">
+            <summary>
+            This function returns all the teams in DB.
+            </summary>
+            <returns>
+            <para>IEnumerable of team Objects.</para>
+            </returns>
+        </member>
+        <member name="M:Repository.TeamRepository.GetTeamById(System.Int32)">
+            <summary>
+            This function returns all the teams in DB.
+            </summary>
+            <returns>
+            <para>team object with particular id.</para>
+            </returns>
+            <param name="teamId">An integer representing team ID.</param>
+        </member>
+        <member name="M:Repository.TeamRepository.GetTeamByName(System.String)">
+            <summary>
+            This function returns a particular team by name.
+            </summary>
+            <returns>
+            <para>team object with particular name.</para>
+            </returns>
+            <param name="teamName">A string representing name of the team to be searched.</param>
+        </member>
+        <member name="M:Repository.TeamRepository.CreateTeam(Entities.Models.Team)">
+            <summary>
+            This function creates a team entry in DB.
+            </summary>
+            <remarks>
+            This creates and saves a new team entry in db.
+            </remarks>
+            <param name="team">An object of type team</param>
+        </member>
+        <member name="M:Repository.TeamRepository.UpdateTeam(Entities.Models.Team,Entities.Models.Team)">
+            <summary>
+            This function updates a team entry in DB.
+            </summary>
+            <remarks>
+            This updates and saves a new team entry in db.
+            </remarks>
+            <param name="dbTeam">An team object of type team</param>
+            <param name="team">An object of type team to be mapped to db</param>
+        </member>
+        <member name="M:Repository.TeamRepository.DeleteTeam(Entities.Models.Team)">
+            <summary>
+            This function delete a team entry in DB.
+            </summary>
+            <remarks>
+            This delete and saves a new team entry in db.
+            </remarks>
+            <param name="team">An object of type team</param>
+        </member>
+    </members>
+</doc>

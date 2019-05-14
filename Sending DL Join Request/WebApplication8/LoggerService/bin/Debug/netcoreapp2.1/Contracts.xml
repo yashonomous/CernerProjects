@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Contracts.IAssociateRepository">
+            <summary>
+            <para>The AssociateRepository interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.IAssociateRepository.checkAssociateExists(System.String)">
+            <summary>Check if the associate exists.</summary>
+            <param name="assocId">Associate Id.</param>
+            <returns>boolean value</returns>
+        </member>
+        <member name="M:Contracts.IAssociateRepository.GetAllAssociates">
+            <summary>Gets all associates.</summary>
+            <returns>IEnumerable of type Associate.</returns>
+        </member>
+        <member name="T:Contracts.IGroupRepository">
+            <summary>
+            <para>The GroupRepository interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.IGroupRepository.GetAllGroups">
+            <summary>Get all groups objects.</summary>
+            <returns>IEnumerable of tye Group</returns>
+        </member>
+        <member name="M:Contracts.IGroupRepository.GetGroupById(System.Int32)">
+            <summary>Gets the group by id.</summary>
+            <param name="id">The id of the group to be searched.</param>
+            <returns>Group object with given id.</returns>
+        </member>
+        <member name="M:Contracts.IGroupRepository.GetGroupByName(System.String)">
+            <summary>Gets the group by name.</summary>
+            <param name="gName">Name of the group to be searched.</param>
+            <returns>Group object with given name.</returns>
+        </member>
+        <member name="M:Contracts.IGroupRepository.CreateGroup(Entities.Models.Group)">
+            <summary>Creates the group.</summary>
+            <param name="group">The group object.</param>
+        </member>
+        <member name="M:Contracts.IGroupRepository.UpdateGroup(Entities.Models.Group,Entities.Models.Group)">
+            <summary>Updates the group.</summary>
+            <param name="dbGroup">The database group.</param>
+            <param name="group">The group object.</param>
+        </member>
+        <member name="M:Contracts.IGroupRepository.DeleteGroup(Entities.Models.Group)">
+            <summary>Deletes the group.</summary>
+            <param name="group">The group object.</param>
+        </member>
+        <member name="T:Contracts.IGroupSolutionRepository">
+            <summary>
+            <para>The GroupSolutionRepository interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.IGroupSolutionRepository.GetAllGroupSolutions">
+            <summary>Gets all solutions.</summary>
+            <returns>IEnumerable of type solution.</returns>
+        </member>
+        <member name="M:Contracts.IGroupSolutionRepository.CreateGroupSolution(Entities.Models.GroupSolution)">
+            <summary>Creates the group and solution.</summary>
+            <param name="groupSolution">The groupSolution object.</param>
+        </member>
+        <member name="M:Contracts.IGroupSolutionRepository.GetAllSolutionsByGroupId(System.Int32)">
+            <summary>Gets all solutions.</summary>
+            /// <param name="groupId">The groupSolution object.</param>
+            <returns>group solution object.</returns>
+        </member>
+        <member name="T:Contracts.IGroupTeamRepository">
+            <summary>
+            <para>The GroupTeam interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.IGroupTeamRepository.GetAllGroupTeams">
+            <summary>Gets all teams.</summary>
+            <returns>IEnumerable of type GroupSolution.</returns>
+        </member>
+        <member name="M:Contracts.IGroupTeamRepository.CreateGroupTeam(Entities.Models.GroupTeam)">
+            <summary>Creates the group and team.</summary>
+            <param name="groupTeam">The groupSolution object.</param>
+        </member>
+        <member name="M:Contracts.IGroupTeamRepository.GetAllTeamsByGroupId(System.Int32)">
+            <summary>Gets all teams.</summary>
+            /// <param name="groupId">The groupSolution object.</param>
+            <returns>group solution object.</returns>
+        </member>
+        <member name="T:Contracts.ILoggerManager">
+            <summary>
+            <para>The ILoggerManager interface.</para>
+            <para>It contains methods for the logger actions.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.ILoggerManager.LogInfo(System.String)">
+            <summary>Logs the information.</summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Contracts.ILoggerManager.LogWarn(System.String)">
+            <summary>Logs the warn.</summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Contracts.ILoggerManager.LogDebug(System.String)">
+            <summary>Logs the debug.</summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Contracts.ILoggerManager.LogError(System.String)">
+            <summary>Logs the error.</summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:Contracts.IManagerRepository">
+            <summary>
+            <para>The ManagerRepository interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.IManagerRepository.GetAllManagers">
+            <summary>Get all managers objects.</summary>
+            <returns>IEnumerable of tye manager</returns>
+        </member>
+        <member name="M:Contracts.IManagerRepository.GetManagerById(System.Int32)">
+            <summary>Gets the manager by id.</summary>
+            <param name="id">The id of the manager to be searched.</param>
+            <returns>manager object with given id.</returns>
+        </member>
+        <member name="M:Contracts.IManagerRepository.GetManagerByName(System.String)">
+            <summary>Gets the manager by name.</summary>
+            <param name="gName">Name of the manager to be searched.</param>
+            <returns>manager object with given name.</returns>
+        </member>
+        <member name="M:Contracts.IManagerRepository.CreateManager(Entities.Models.Manager)">
+            <summary>Creates the manager.</summary>
+            <param name="manager">The manager object.</param>
+        </member>
+        <member name="M:Contracts.IManagerRepository.UpdateManager(Entities.Models.Manager,Entities.Models.Manager)">
+            <summary>Updates the manager.</summary>
+            <param name="dbManager">The database manager.</param>
+            <param name="manager">The manager object.</param>
+        </member>
+        <member name="M:Contracts.IManagerRepository.DeleteManager(Entities.Models.Manager)">
+            <summary>Deletes the manager.</summary>
+            <param name="manager">The manager object.</param>
+        </member>
+        <member name="T:Contracts.IRepositoryBase`1">
+            <summary>
+            <para>The RepositoryBase interface.</para>
+            <para>Its a generic repository that will serve us all the CRUD methods</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Contracts.IRepositoryBase`1.FindAll">
+            <summary>
+            This function returns DbSet from db using the context.
+            </summary>
+            <returns>
+            <para>DbSet from db using the context.</para>
+            </returns>
+        </member>
+        <member name="M:Contracts.IRepositoryBase`1.FindByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            This function returns a particular DbSet from DB.
+            </summary>
+            <returns>
+            <para>Group object with particular id.</para>
+            </returns>
+            <param name="expression">A lambda expression defining the condition to search (<example>group => group.id.Equals(groupId))</example>)</param>
+        </member>
+        <member name="M:Contracts.IRepositoryBase`1.Create(`0)">
+            <summary>
+            This function adds a DbSet in the db.
+            </summary>
+            <param name="entity">Class of type any.</param>
+        </member>
+        <member name="M:Contracts.IRepositoryBase`1.Update(`0)">
+            <summary>
+            This function updates a DbSet in the db.
+            </summary>
+            <param name="entity">Class of type any.</param>
+        </member>
+        <member name="M:Contracts.IRepositoryBase`1.Delete(`0)">
+            <summary>
+            This function deletes a DbSet from the db.
+            </summary>
+            <param name="entity">Class of type any.</param>
+        </member>
+        <member name="M:Contracts.IRepositoryBase`1.Save">
+            <summary>
+            This function saves a DbSet in the db.
+            </summary>
+        </member>
+        <member name="T:Contracts.IRepositoryWrapper">
+            <summary>Wrapper arount the Group repository class</summary>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.Group">
+            <summary>Gets the group object.</summary>
+            <value>The GroupRepository object.</value>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.Associate">
+            <summary>Gets the associate object.</summary>
+            <value>The AssociateRepository interface.</value>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.Solution">
+            <summary>Gets the solution object.</summary>
+            <value>The SolutionRepository interface.</value>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.Team">
+            <summary>Gets the team.</summary>
+            <value>The TeamRepository interface.</value>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.Manager">
+            <summary>Gets the manager.</summary>
+            <value>The ManagerRepository interface.</value>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.GroupSolution">
+            <summary>Gets the solution and group.</summary>
+            <value>The GroupSolutionRepository interface.</value>
+        </member>
+        <member name="P:Contracts.IRepositoryWrapper.GroupTeam">
+            <summary>Gets the solution and group.</summary>
+            <value>The GroupTeamRepository interface.</value>
+        </member>
+        <member name="T:Contracts.ISolutionRepository">
+            <summary>
+            <para>The SolutionRepository interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.ISolutionRepository.GetAllSolutions">
+            <summary>Get all solutions objects.</summary>
+            <returns>IEnumerable of tye solution</returns>
+        </member>
+        <member name="M:Contracts.ISolutionRepository.GetSolutionById(System.Int32)">
+            <summary>Gets the solution by id.</summary>
+            <param name="id">The id of the solution to be searched.</param>
+            <returns>solution object with given id.</returns>
+        </member>
+        <member name="M:Contracts.ISolutionRepository.GetSolutionByName(System.String)">
+            <summary>Gets the solution by name.</summary>
+            <param name="gName">Name of the solution to be searched.</param>
+            <returns>solution object with given name.</returns>
+        </member>
+        <member name="M:Contracts.ISolutionRepository.CreateSolution(Entities.Models.Solution)">
+            <summary>Creates the solution.</summary>
+            <param name="solution">The solution object.</param>
+        </member>
+        <member name="M:Contracts.ISolutionRepository.UpdateSolution(Entities.Models.Solution,Entities.Models.Solution)">
+            <summary>Updates the solution.</summary>
+            <param name="dbSolution">The database solution.</param>
+            <param name="solution">The solution object.</param>
+        </member>
+        <member name="M:Contracts.ISolutionRepository.DeleteSolution(Entities.Models.Solution)">
+            <summary>Deletes the solution.</summary>
+            <param name="solution">The solution object.</param>
+        </member>
+        <member name="T:Contracts.ITeamRepository">
+            <summary>
+            <para>The TeamRepository interface.</para>
+            <para>It contains methods which define all the HTTP request.</para>
+            </summary>
+        </member>
+        <member name="M:Contracts.ITeamRepository.GetAllTeams">
+            <summary>Get all teams objects.</summary>
+            <returns>IEnumerable of tye team</returns>
+        </member>
+        <member name="M:Contracts.ITeamRepository.GetTeamById(System.Int32)">
+            <summary>Gets the team by id.</summary>
+            <param name="id">The id of the team to be searched.</param>
+            <returns>team object with given id.</returns>
+        </member>
+        <member name="M:Contracts.ITeamRepository.GetTeamByName(System.String)">
+            <summary>Gets the team by name.</summary>
+            <param name="gName">Name of the team to be searched.</param>
+            <returns>team object with given name.</returns>
+        </member>
+        <member name="M:Contracts.ITeamRepository.CreateTeam(Entities.Models.Team)">
+            <summary>Creates the team.</summary>
+            <param name="team">The team object.</param>
+        </member>
+        <member name="M:Contracts.ITeamRepository.UpdateTeam(Entities.Models.Team,Entities.Models.Team)">
+            <summary>Updates the team.</summary>
+            <param name="dbTeam">The database team.</param>
+            <param name="team">The team object.</param>
+        </member>
+        <member name="M:Contracts.ITeamRepository.DeleteTeam(Entities.Models.Team)">
+            <summary>Deletes the team.</summary>
+            <param name="team">The team object.</param>
+        </member>
+    </members>
+</doc>
